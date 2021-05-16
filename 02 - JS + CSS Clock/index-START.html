@@ -9,9 +9,9 @@
 
     <div class="clock">
       <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
         <div class="hand second-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand hour-hand"></div>
       </div>
     </div>
 
@@ -54,19 +54,88 @@
       height: 100%;
       transform: translateY(-3px); /* account for the height of the clock hands */
     }
+    .clock-face::after{
+      content: '';
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: white;
+    }
+
 
     .hand {
-      width:50%;
-      height:6px;
-      background:black;
       position: absolute;
-      top:50%;
+      width: 100%;
+      height: 100%;
+      /* background-color: black; */
     }
+    .second-hand::after{
+      position: absolute;
+      content: '';
+      display: block;
+      width: 5px;
+      height: 45%;
+      background-color: red;
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%,-0);
+    }
+    .min-hand::after{
+      position: absolute;
+      content: '';
+      display: block;
+      width: 10px;
+      height: 40%;
+      background-color: white;
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%,0);
+    }
+    .hour-hand::after{
+      position: absolute;
+      content: '';
+      display: block;
+      width: 15px;
+      height: 30%;
+      background-color: rgb(136, 17, 17);
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%,0);
+      
+    }
+
 
   </style>
 
   <script>
+;(function(){
+  const sec = document.querySelector('.second-hand')
+  const min = document.querySelector('.min-hand')
+  const hour = document.querySelector('.hour-hand')
+  function setClock(){
+    const date = new Date();
 
+    let secondDeg = date.getSeconds() *6
+    let minDeg = date.getMinutes() *6
+    let hourDeg = date.getHours() * 30
+
+    sec.style.transform = `rotate(${secondDeg}deg)`
+    min.style.transform = `rotate(${minDeg}deg)`
+    hour.style.transform = `rotate(${hourDeg}deg)`
+
+  }
+
+  setClock() //初始化画面
+  //计时器
+  setInterval(setClock,1000)
+
+
+})()
 
   </script>
 </body>
