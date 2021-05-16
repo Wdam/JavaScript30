@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # JavaScript30 - 一个月纯 JS 挑战中文指南
 
 创建日期：2016-12-20  
@@ -86,3 +87,6 @@ Name | Contribution
 ## JOIN US
 如果对这个系列的指南有什么改进的想法，欢迎[提 issue](https://github.com/soyaine/JavaScript30/issues)，如果你也想参与写作，请看 [wiki](https://github.com/soyaine/JavaScript30/wiki/%E6%8C%87%E5%8D%97%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E)，并联系 Soyaine。
 
+=======
+# JavaScript30
+>>>>>>> d03ae310ed773c3e40aba036365803211c44a72e

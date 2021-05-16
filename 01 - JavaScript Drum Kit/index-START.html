@@ -58,7 +58,34 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
   <script>
+<<<<<<< HEAD
 
+=======
+    (function(){
+        window.addEventListener('keydown',playHandler)
+        
+        function playHandler(e){
+          //播放声音，操作style
+          const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+         
+         if(audio) {
+           audio.currentTime = 0
+           audio.play()   
+           }
+
+         
+
+
+          const dom = document.querySelector(`div[data-key="${e.keyCode}"]`)
+          // dom.classList.add('playing')
+          if(dom) dom.classList.add('playing')
+        }
+
+
+
+
+    })()
+>>>>>>> d03ae310ed773c3e40aba036365803211c44a72e
   </script>
 
 </body>
